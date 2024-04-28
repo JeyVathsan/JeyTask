@@ -9,8 +9,8 @@ const App = () => {
   
   useEffect(() =>{
     const current = new Date();
-    if(current.getHours() < 6 && current.getHours()){
-      document.body.style.backgroundColor = "yellow";
+    if(current.getHours() > 6 && current.getHours() < 18){
+      document.body.style.backgroundColor = "#e6c46a";
       document.body.style.color = " black";
     }else{
       document.body.style.backgroundColor = "grey";
