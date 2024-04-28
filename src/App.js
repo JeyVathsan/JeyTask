@@ -1,25 +1,68 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+
+import Weather from "./Weather"
+import Home from "./Home"
+import { useState , useEffect } from "react"
+// import "./App.css"
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
+const App = () => {
+  
+  useEffect(() =>{
+    const current = new Date();
+    if(current.getHours() < 6 && current.getHours()){
+      document.body.style.backgroundColor = "yellow";
+      document.body.style.color = " black";
+    }else{
+      document.body.style.backgroundColor = "grey";
+      document.body.style.color = " black";
+    }
+},[])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+
+      <div > 
+        
+          <img src="https://i.pinimg.com/736x/6e/b0/8b/6eb08b08969a88e2e60a71e62dda2014.jpg" className="titlepic" />
+          <p className="title">
+            <b>Weather App</b></p>
+        
+        <nav>
+          <ul className="navbar">
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/weather">Weather</Link></li>
+          </ul>
+          <hr className="hr"></hr>
+        </nav>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/weather" element={<Weather />}></Route>
+        </Routes>
+      </div>
+
+    </Router>
+
+  )
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
