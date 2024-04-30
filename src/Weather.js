@@ -7,9 +7,9 @@ const Weather = () => {
   const [city, setCity] = useState('')
   const [weather, setweather] = useState(null)
   const [error, setError] = useState(null)
-  
 
-  
+
+
   const handleWeather = async (e) => {
 
     e.preventDefault()
@@ -29,7 +29,7 @@ const Weather = () => {
   const getDateArray = (startDate, daysToAdd) => {
     const dateArray = [];
     const currentDate = new Date(startDate * 1000); // Convert from seconds to milliseconds
-    for (let i = 0; i < daysToAdd; i++) {
+    for (let i = 1; i < 2; i++) {
       dateArray.push(currentDate.getTime() / 1000); // Convert back to seconds
       currentDate.setDate(currentDate.getDate() + 1);
     }
@@ -49,15 +49,110 @@ const Weather = () => {
     return (
       <div className="result" >
         <h2>Weather Forecast for {weather.city.name}</h2>
+        <div className="align">
+          <div className="fiveday">
+            {filteredData.map((item, index) => (
+              <div className="list">
+                Date : {item.dt_txt.split(" ")[0]} <br />Day : {week[days[index]]}: {(Math.round(item.main.temp) * 10) / 10 - 273}°C <br />
 
-        <div className="fiveday">
-          {filteredData.map((item,index) => (
-            <div className="list">    
-            {item.dt_txt.split(" ")[0]} : {week[days[index]]}: {(Math.round(item.main.temp) * 10) / 10 - 273}°C 
+                <img src={`https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}></img>
+              </div>
             
-          <img src={`https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}></img>
+            ))}
           </div>
-          ))}
+          <div className="rightalign">
+            <div>
+              <table>
+                <tr>
+                  <td className="tableBorder">
+                    {filteredData.map((item, index) => (
+                      <div className="list">
+                        Date : {item.dt_txt.split(" ")[0]} <br />Day : {week[days[index]]}: {(Math.round(item.main.temp) * 10) / 10 - 273}°C <br />
+
+                        {/* <img src={`https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}></img> */}
+                      </div>
+                    ))}
+                  </td>
+                  <td className="tableBorder">
+                    {filteredData.map((item, index) => (
+                      <div className="list">
+                        Date : {item.dt_txt.split(" ")[0]} <br />Day : {week[days[index]]}: {(Math.round(item.main.temp) * 10) / 10 - 273}°C <br />
+
+                        {/* <img src={`https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}></img> */}
+                      </div>
+                    ))}
+                  </td>
+                  <td className="tableBorder">
+                    {filteredData.map((item, index) => (
+                      <div className="list">
+                        Date : {item.dt_txt.split(" ")[0]} <br />Day : {week[days[index]]}: {(Math.round(item.main.temp) * 10) / 10 - 273}°C <br />
+
+                        {/* <img src={`https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}></img> */}
+                      </div>
+                    ))}
+                  </td>
+                </tr>
+                <tr>
+                  <td className="tableBorder">
+                    {filteredData.map((item, index) => (
+                      <div className="list">
+                        Date : {item.dt_txt.split(" ")[0]} <br />Day : {week[days[index]]}: {(Math.round(item.main.temp) * 10) / 10 - 273}°C <br />
+
+                        {/* <img src={`https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}></img> */}
+                      </div>
+                    ))}
+                  </td>
+                  <td className="tableBorder">
+                    {filteredData.map((item, index) => (
+                      <div className="list">
+                        Date : {item.dt_txt.split(" ")[0]} <br />Day : {week[days[index]]}: {(Math.round(item.main.temp) * 10) / 10 - 273}°C <br />
+
+                        {/* <img src={`https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}></img> */}
+                      </div>
+                    ))}
+                  </td>
+                  <td className="tableBorder">
+                    {filteredData.map((item, index) => (
+                      <div className="list">
+                        Date : {item.dt_txt.split(" ")[0]} <br />Day : {week[days[index]]}: {(Math.round(item.main.temp) * 10) / 10 - 273}°C <br />
+
+                        {/* <img src={`https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}></img> */}
+                      </div>
+                    ))}
+                  </td>
+                </tr>
+                <tr>
+                  <td className="tableBorder">
+                    {filteredData.map((item, index) => (
+                      <div className="list">
+                        Date : {item.dt_txt.split(" ")[0]} <br />Day : {week[days[index]]}: {(Math.round(item.main.temp) * 10) / 10 - 273}°C <br />
+
+                        {/* <img src={`https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}></img> */}
+                      </div>
+                    ))}
+                  </td>
+                  <td className="tableBorder">
+                    {filteredData.map((item, index) => (
+                      <div className="list">
+                        Date : {item.dt_txt.split(" ")[0]} <br />Day : {week[days[index]]}: {(Math.round(item.main.temp) * 10) / 10 - 273}°C <br />
+
+                        {/* <img src={`https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}></img> */}
+                      </div>
+                    ))}
+                  </td>
+                  <td className="tableBorder">
+                    {filteredData.map((item, index) => (
+                      <div className="list">
+                        Date : {item.dt_txt.split(" ")[0]} <br />Day : {week[days[index]]}: {(Math.round(item.main.temp) * 10) / 10 - 273}°C <br />
+
+                        {/* <img src={`https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}></img> */}
+                      </div>
+                    ))}
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -91,29 +186,3 @@ export default Weather;
 
 
 
-
-
-// import { useState } from "react";
-// import axios from 'axios';
-// import "./App.css";
-
-// const Weather = () => {
-//   const [city, setCity] = useState('');
-//   const [weather, setWeather] = useState(null);
-//   const [error, setError] = useState(null);
-
-//   const handleWeather = async (e) => {
-//     e.preventDefault();
-//     try {
-//       const res = await axios.get(https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=bd5e378503939ddaee76f12ad7a97608);
-//       setWeather(res.data);
-//       setError(null);
-//     } catch (err) {
-//       console.log("Error : ", err);
-//       setError("City not found");
-//       setWeather(null);
-//     }
-//   }
-
-
-// export default Weather;
