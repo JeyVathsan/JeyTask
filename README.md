@@ -1,6 +1,8 @@
 
 # Weather App
-##Hosted Link : jey-task.vercel.app
+
+## Hosted Link : jey-task.vercel.app
+
 A weather application built with React that integrates with a weather API to fetch and display current weather information.
 
 ## Features
